@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+    ServerName %(server_name)s
+
+    WSGIDaemonProcess %(server_name)s processes=2 threads=40 display-name=%(process_name)s_wsgi
+    WSGIProcessGroup %(server_name)s
+    WSGIScriptAlias / %(wsgi_file)s
+
+    %(extraapachevh)s
+</VirtualHost>
+%(extraapache)s
